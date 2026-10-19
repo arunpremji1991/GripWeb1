@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our Leadership | GRIP Smashburger · Salalah</title>
+<meta name="description" content="Omani leadership, a shared vision. Meet the four Omani entrepreneurs behind GRIP, the smashburger brand growing from Dhofar.">
+<link rel="icon" href="assets/badge-grip.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Modak&family=Cairo:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* hero (orange, grid like the profile) */
+.hero{position:relative;min-height:100vh;background:var(--o);color:var(--c);overflow:hidden;padding:13vh 3vw 6vw;display:flex;flex-direction:column;justify-content:space-between}
+.hero::before{content:"";position:absolute;inset:0;background:url(assets/grid.png) center top/68vw;opacity:.22;pointer-events:none}
+.hero .ttl{position:relative;z-index:2}
+.hero .ar-t{display:block;font-family:"Cairo",sans-serif;font-weight:800;font-size:clamp(3.2rem,8vw,9rem);line-height:1.1;text-transform:none;direction:rtl;text-align:left}
+.hero h1{font-size:clamp(5rem,15vw,17rem);color:var(--c);-webkit-text-stroke:0;margin-top:.5vw}
+.hero .tag{position:absolute;right:3vw;top:3vh;z-index:3}
+.hero .ic{position:absolute;z-index:1;width:15vw;right:6vw;top:14vh;rotate:12deg;opacity:.95}
+.team{position:relative;z-index:3;display:grid;grid-template-columns:repeat(4,1fr);gap:2vw;margin-top:4vw;align-items:end}
+.lc{position:relative;background:var(--c);color:var(--ink);border-radius:2vw;padding:.9vw .9vw 1.4vw;text-align:center;box-shadow:.5vw .7vw 0 rgba(42,18,8,.28);transition:transform .5s cubic-bezier(.2,.9,.2,1)}
+.lc:nth-child(1){rotate:-2.5deg}.lc:nth-child(2){rotate:1.5deg;margin-bottom:2vw}.lc:nth-child(3){rotate:-1.5deg;margin-bottom:2vw}.lc:nth-child(4){rotate:2.5deg}
+.lc:hover{transform:translateY(-1.2vw) rotate(-2deg) scale(1.04);z-index:5}
+.lc .ph{border-radius:1.4vw;overflow:hidden;background:var(--c);aspect-ratio:160/196}
+.lc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.9,.2,1)}
+.lc:hover .ph img{transform:scale(1.08)}
+.lc h3{font-weight:400;font-size:clamp(1.7rem,2.5vw,3rem);color:var(--o);line-height:.95;margin-top:.9vw}
+.lc .an{display:block;font-family:"Cairo",sans-serif;font-weight:600;font-size:clamp(1.1rem,1.5vw,1.9rem);text-transform:none;direction:rtl;margin-top:.3vw}
+.lc .no{position:absolute;left:-.7vw;top:-1.1vw;z-index:3;background:var(--o);color:var(--c);outline:3px solid var(--c);font-family:"Modak",cursive;font-size:clamp(1.2rem,1.7vw,2.1rem);width:3.4vw;min-width:44px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;rotate:-10deg;padding-top:.1em}
+
+/* vision */
+.vision{position:relative;background:var(--c);padding:6vw 4vw 9vw;overflow:hidden}
+.vision .head{text-align:center;margin-bottom:5vw}
+.vision h2{font-size:clamp(5rem,13vw,15rem);margin:1vw auto 0;max-width:11ch}
+.vision .ar-sub{display:block;font-family:"Cairo",sans-serif;font-weight:800;color:var(--o);font-size:clamp(2.2rem,5vw,6rem);margin-top:1vw;line-height:1.15;text-transform:none}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:5vw;max-width:1500px;margin:0 auto}
+.cols .col p{font-size:clamp(1.5rem,1.9vw,2.3rem);line-height:1.12;margin-bottom:1.6vw;text-transform:none}
+.cols .col.en p{font-family:"Mouse Memoirs";text-transform:uppercase}
+.cols .col.ar{direction:rtl}
+.cols .col.ar p{font-family:"Cairo",sans-serif;font-weight:600;font-size:clamp(1.15rem,1.45vw,1.75rem);line-height:1.8;text-align:right}
+.cols .col.en .lead{font-size:clamp(2rem,2.8vw,3.4rem);color:var(--o);line-height:.95;margin-bottom:1.6vw}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2vw;max-width:1500px;margin:7vw auto 0}
+.st{background:var(--o);color:var(--c);border-radius:2vw;padding:2.4vw 2vw;text-align:center;box-shadow:.5vw .7vw 0 rgba(42,18,8,.18);transition:transform .4s}
+.st:nth-child(1){rotate:-2deg}.st:nth-child(2){rotate:1.5deg}.st:nth-child(3){rotate:-1deg}
+.st:hover{transform:translateY(-.8vw) rotate(0)}
+.st b{display:block;font-family:"Modak",cursive;font-weight:400;font-size:clamp(4rem,8vw,9rem);line-height:.9}
+.st span{font-size:clamp(1.4rem,1.9vw,2.3rem)}
+
+/* values */
+.values{position:relative;background:var(--o);color:var(--c);padding:5vw 3vw 9vw;overflow:hidden;text-align:center}
+.values::before{content:"";position:absolute;inset:0;background:url(assets/waves-cream.png) 0 0/36vw;opacity:.06;pointer-events:none}
+.values h2{font-size:clamp(5rem,13vw,15rem);margin:1vw auto 0;max-width:10ch;position:relative}
+.vgrid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:2.4vw;margin-top:5vw;text-align:left}
+.vc{background:var(--c);color:var(--ink);border-radius:2vw;padding:2.2vw;box-shadow:.5vw .7vw 0 rgba(42,18,8,.3);transition:transform .5s cubic-bezier(.2,.9,.2,1)}
+.vc:nth-child(1){rotate:-1.5deg}.vc:nth-child(2){rotate:1deg}.vc:nth-child(3){rotate:-1deg}.vc:nth-child(4){rotate:1.2deg}.vc:nth-child(5){rotate:-1.2deg}.vc:nth-child(6){rotate:1.5deg}
+.vc:hover{transform:translateY(-1vw) rotate(-2deg) scale(1.03)}
+.vc img{width:34%;margin-bottom:1vw}
+.vc h3{font-weight:400;font-size:clamp(2.4rem,3.4vw,4.2rem);color:var(--o);line-height:.9;margin-bottom:.6vw}
+.vc p{font-size:clamp(1.3rem,1.6vw,1.9rem);line-height:1.1}
+.vc .an{display:block;font-family:"Cairo",sans-serif;font-weight:600;text-transform:none;direction:rtl;margin-top:.8vw;font-size:clamp(1.1rem,1.35vw,1.6rem);opacity:.85}
+
+@media(max-width:1000px){
+ .team{grid-template-columns:repeat(2,1fr);gap:6vw 4vw;margin-top:10vw}
+ .lc{border-radius:4vw;padding:2vw 2vw 3vw}.lc .ph{border-radius:3vw}
+ .lc:nth-child(n){margin-bottom:0}.lc h3{font-size:2rem;margin-top:2vw}.lc .an{font-size:1.2rem}
+ .lc .no{width:10vw;left:-1.5vw;top:-3vw;font-size:1.4rem}
+ .hero{padding-top:16vh}
+ .hero h1{font-size:23vw;line-height:.82}
+ .hero .ic{width:28vw;right:2vw;top:18vh}
+ .hero .tag{top:12vh;right:4vw}
+ .cols{grid-template-columns:1fr;gap:10vw}
+ .cols .col p{font-size:1.5rem;margin-bottom:5vw}
+ .cols .col.ar p{font-size:1.3rem}
+ .stats,.vgrid{grid-template-columns:1fr;gap:6vw}
+ .st,.vc{border-radius:5vw;padding:7vw}
+ .vc img{width:22%;margin-bottom:3vw}
+ .vc h3{font-size:3.2rem}.vc p{font-size:1.5rem}.vc .an{font-size:1.2rem}
+ .vision,.values{padding-top:14vw;padding-bottom:16vw}
+ .vision h2,.values h2{font-size:24vw}
+ .vision .ar-sub{font-size:2.6rem}
+}
+</style>
+</head>
+<body class="lock">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-tomato" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="45" fill="#F05024" stroke="#3a1a0c" stroke-width="4"/>
+      <circle cx="50" cy="50" r="35" fill="#ff7a52" stroke="#3a1a0c" stroke-width="3"/>
+      <g fill="#FFD7C2" stroke="#3a1a0c" stroke-width="2.5">
+        <ellipse cx="50" cy="30" rx="8" ry="13"/><ellipse cx="50" cy="70" rx="8" ry="13"/>
+        <ellipse cx="30" cy="40" rx="8" ry="13" transform="rotate(-60 30 40)"/><ellipse cx="70" cy="40" rx="8" ry="13" transform="rotate(60 70 40)"/>
+        <ellipse cx="30" cy="60" rx="8" ry="13" transform="rotate(60 30 60)"/><ellipse cx="70" cy="60" rx="8" ry="13" transform="rotate(-60 70 60)"/>
+      </g>
+      <circle cx="50" cy="50" r="6" fill="#FFF4EA" stroke="#3a1a0c" stroke-width="2.5"/>
+    </symbol>
+    <symbol id="i-cheese" viewBox="0 0 100 100">
+      <path d="M8 34 L94 14 L88 80 L16 90 Z" fill="#FFC247" stroke="#3a1a0c" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M8 34 L94 14" stroke="#fff0b8" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+      <g fill="#E9A21F" stroke="#3a1a0c" stroke-width="2.5"><circle cx="34" cy="52" r="7"/><circle cx="64" cy="40" r="5"/><circle cx="62" cy="68" r="8"/></g>
+    </symbol>
+    <symbol id="i-lettuce" viewBox="0 0 100 100">
+      <path d="M12 58 C0 36 18 14 36 22 C44 4 70 6 76 24 C96 24 100 52 86 62 C92 82 66 94 52 84 C38 98 10 88 16 66 Z" fill="#9BD05F" stroke="#3a1a0c" stroke-width="4" stroke-linejoin="round"/>
+      <g fill="none" stroke="#3a1a0c" stroke-width="2.5" stroke-linecap="round"><path d="M50 84 C48 60 50 40 52 24"/><path d="M50 62 C38 56 30 46 26 36"/><path d="M50 52 C62 48 70 40 74 30"/><path d="M49 72 C60 70 72 66 82 62"/></g>
+    </symbol>
+    <symbol id="i-patty" viewBox="0 0 100 100">
+      <ellipse cx="50" cy="52" rx="47" ry="34" fill="#6b3a1f" stroke="#3a1a0c" stroke-width="4"/>
+      <ellipse cx="50" cy="46" rx="40" ry="26" fill="#86492a"/>
+      <g fill="#3a1a0c" opacity=".75"><circle cx="28" cy="44" r="3"/><circle cx="46" cy="36" r="2.5"/><circle cx="64" cy="48" r="3"/><circle cx="40" cy="58" r="2.5"/><circle cx="72" cy="38" r="2.2"/><circle cx="56" cy="62" r="3"/></g>
+    </symbol>
+  </defs>
+</svg>
+
+<div id="loader">
+  <div class="in"><img src="assets/badge-grip.png" alt=""><p id="ltxt">Meeting the founders...</p></div>
+  <div id="bar"></div>
+</div>
+
+<nav class="top" id="nav">
+  <a class="logo" href="index.html" aria-label="GRIP home"><img id="logoimg" src="assets/sticker-grip.png" alt="GRIP"></a>
+  <div class="pills">
+    <a class="pill cream" href="https://menu.apetitomenu.com/GRIP/en" target="_blank" rel="noopener"><span class="roll"><span>Order</span><span>Order</span></span></a>
+    <button class="pill" id="mbtn" aria-expanded="false" aria-controls="menu"><span class="roll"><span>Menu</span><span>Menu</span></span><span class="burger"><i></i><i></i></span></button>
+  </div>
+</nav>
+
+<div id="menu" aria-hidden="true">
+  <a class="m" href="index.html">Home</a>
+  <a class="m" href="menu.html">Menu</a>
+  <a class="m" href="leadership.html">Leadership</a>
+  <a class="m" href="index.html#find">Find us</a>
+  <a class="m" href="https://menu.apetitomenu.com/GRIP/en" target="_blank" rel="noopener">Order</a>
+  <div class="sm"><span>Wafa Walk · +968 7112 2000</span><span>Salalah Gardens Mall · +968 7222 3377</span></div>
+</div>
+
+<main>
+<section class="hero" id="top" data-intro>
+  <span class="tag light" id="t0" style="-webkit-text-stroke:0;color:var(--c)">Omani owned</span>
+  <img class="ic" data-pop src="assets/sticker-mascot.png" alt="">
+  <div class="ttl">
+    <span class="ar-t" id="art"><span class="w"><span>قيادتنا</span></span></span>
+    <h1 class="big" id="h1" aria-label="Our leadership"><span class="w"><span>Our</span></span> <span class="w"><span>Leadership</span></span></h1>
+  </div>
+  <div class="team" id="team">
+    <article class="lc"><span class="no">1</span><div class="ph"><img src="assets/leaders/salim.png" alt="Salim Hussain Muqaibal" width="480" height="588"></div><h3>Salim Hussain Muqaibal</h3><span class="an">سالم حسين مقيبل</span></article>
+    <article class="lc"><span class="no">2</span><div class="ph"><img src="assets/leaders/sahal.png" alt="Sahal Ali Al hafidh" width="480" height="588"></div><h3>Sahal Ali Al hafidh</h3><span class="an">سهل علي ال حفيظ</span></article>
+    <article class="lc"><span class="no">3</span><div class="ph"><img src="assets/leaders/mohammed.png" alt="Mohammed Aqil Al hafidh" width="480" height="588"></div><h3>Mohammed Aqil Al hafidh</h3><span class="an">محمد عقيل ال حفيظ</span></article>
+    <article class="lc"><span class="no">4</span><div class="ph"><img src="assets/leaders/mubarak.png" alt="Mubarak Abdulmunem Shamas" width="480" height="588"></div><h3>Mubarak Abdulmunem Shamas</h3><span class="an">مبارك عبدالمنعم شماس</span></article>
+  </div>
+</section>
+
+<div class="wavebox" style="background:#F05024"><svg viewBox="0 0 2880 160" preserveAspectRatio="none" height="160"><path fill="#FFF4EA" d="M0 80 C180 20 360 20 540 80 S900 140 1080 80 S1260 20 1440 80 C1620 20 1800 20 1980 80 S2340 140 2520 80 S2700 20 2880 80 V160 H0 Z"/></svg></div>
+
+<section class="vision" id="vision">
+  <div class="head">
+    <span class="tag">A shared vision</span>
+    <h2 class="big split">Omani leadership</h2>
+    <span class="ar-sub reveal-ar">قيادة عمانية... ورؤية طموحة</span>
+  </div>
+  <div class="cols">
+    <div class="col en">
+      <p class="lead split">Behind GRIP are four Omani entrepreneurs.</p>
+      <p class="reveal-lines">Behind GRIP are four Omani entrepreneurs united by a shared ambition to build a national brand defined by quality, operational excellence, and long-term sustainability.</p>
+      <p class="reveal-lines">Their vision is built on practical experience in developing and operating successful hospitality brands in Dhofar, including Lazurd and LIT LIN, providing valuable insight into the local market and evolving customer expectations.</p>
+      <p class="reveal-lines">GRIP is proudly Omani in its ownership, leadership, and management, with a strong commitment to empowering national talent, investing in quality, and building a sustainable brand that grows from Dhofar while proudly representing Oman.</p>
+    </div>
+    <div class="col ar" lang="ar">
+      <p class="ra">تقف خلف GRIP رؤية أربعة رواد أعمال عمانيين يجمعهم شغف بناء علامة تجارية وطنية تعكس جودة المنتج، والتميز في التنفيذ، والقدرة على المنافسة.</p>
+      <p class="ra">ولا تنطلق هذه الرؤية من فكرة مشروع واحد، بل من خبرة عملية في تطوير وتشغيل علامات تجارية ناجحة في قطاع الأغذية والمشروبات بمحافظة ظفار، من أبرزها لازورد (Lazurd) ولت لن (LIT LIN)، وهو ما عزز من فهم الفريق للسوق المحلي وتطلعات العملاء.</p>
+      <p class="ra">وتقوم GRIP على ملكية وإدارة عمانية بالكامل، مع التزام بتطوير الكفاءات الوطنية، والاستثمار في الجودة، وبناء علامة تجارية مستدامة تنطلق من ظفار وتفخر بهويتها العمانية.</p>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="st"><b>4</b><span>Omani founders</span></div>
+    <div class="st"><b>100%</b><span>Omani ownership, leadership &amp; management</span></div>
+    <div class="st"><b>Dhofar</b><span>Where GRIP grows from</span></div>
+  </div>
+</section>
+
+<div class="wavebox" style="background:#FFF4EA"><svg viewBox="0 0 2880 160" preserveAspectRatio="none" height="160"><path fill="#F05024" d="M0 80 C180 20 360 20 540 80 S900 140 1080 80 S1260 20 1440 80 C1620 20 1800 20 1980 80 S2340 140 2520 80 S2700 20 2880 80 V160 H0 Z"/></svg></div>
+
+<section class="values">
+  <span class="tag light">What drives us</span>
+  <h2 class="big light split">Built to last</h2>
+  <div class="vgrid">
+    <div class="vc"><img src="assets/badge-grip.png" alt=""><h3>Quality</h3><p>A national brand defined by the quality of every product we serve.</p><span class="an">جودة المنتج</span></div>
+    <div class="vc"><img src="assets/sticker-mascot.png" alt=""><h3>Excellence</h3><p>Operational excellence in how we cook, serve and run every shop.</p><span class="an">التميز في التنفيذ</span></div>
+    <div class="vc"><img src="assets/sticker-tray.png" alt=""><h3>Sustainability</h3><p>Long-term thinking, so GRIP keeps growing from Dhofar.</p><span class="an">علامة تجارية مستدامة</span></div>
+    <div class="vc"><img src="assets/badge-smash.png" alt=""><h3>Local insight</h3><p>Experience building Dhofar hospitality brands, including Lazurd and LIT LIN.</p><span class="an">فهم السوق المحلي</span></div>
+    <div class="vc"><img src="assets/mascot-curl.png" alt=""><h3>National talent</h3><p>A strong commitment to empowering Omani talent.</p><span class="an">تطوير الكفاءات الوطنية</span></div>
+    <div class="vc"><img src="assets/sticker-grip.png" alt=""><h3>Proudly Omani</h3><p>Omani in ownership, leadership and management, representing Oman with pride.</p><span class="an">نفخر بهويتنا العمانية</span></div>
+  </div>
+</section>
+
+<div class="wavebox" style="background:#F05024"><svg viewBox="0 0 2880 160" preserveAspectRatio="none" height="160"><path fill="#FFF4EA" d="M0 80 C180 20 360 20 540 80 S900 140 1080 80 S1260 20 1440 80 C1620 20 1800 20 1980 80 S2340 140 2520 80 S2700 20 2880 80 V160 H0 Z"/></svg></div>
+<section class="final">
+  <span class="tag" id="t5">Taste the vision</span>
+  <h2 class="big split">Get a grip</h2>
+  <p class="copy reveal-lines">Come and try what four Omani founders built. Order online or visit us in Salalah.</p>
+  <a class="pill solid" href="https://menu.apetitomenu.com/GRIP/en" target="_blank" rel="noopener"><span class="roll"><span>Order online</span><span>Order online</span></span></a>
+</section>
+</main>
+
+<footer id="footer">
+  <div class="bar">
+    <nav>
+      <a class="lk" href="index.html"><span class="roll"><span>Home</span><span>Home</span></span></a>
+      <a class="lk" href="menu.html"><span class="roll"><span>Menu</span><span>Menu</span></span></a>
+      <a class="lk" href="leadership.html"><span class="roll"><span>Leadership</span><span>Leadership</span></span></a>
+      <a class="lk" href="index.html#find"><span class="roll"><span>Find us</span><span>Find us</span></span></a>
+      <a class="lk" href="https://menu.apetitomenu.com/GRIP/en" target="_blank" rel="noopener"><span class="roll"><span>Order</span><span>Order</span></span></a>
+    </nav>
+    <span>&copy; 2026 GRIP — All rights reserved</span>
+  </div>
+  <div class="sub"><span>Smashed patties · Salalah</span><span>Wafa Walk +968 7112 2000 · Gardens Mall +968 7222 3377</span></div>
+  <div class="giant" id="giant">
+    <svg class="drop" style="left:10%"><use href="#i-lettuce"/></svg>
+    <svg class="drop" style="left:30%"><use href="#i-tomato"/></svg>
+    <svg class="drop" style="left:52%"><use href="#i-cheese"/></svg>
+    <svg class="drop" style="left:74%"><use href="#i-patty"/></svg>
+    <img class="gw" src="assets/grip-wordmark.webp" alt="GRIP">
+  </div>
+</footer>
+
+<script>
+window.GRIP={
+  loaderLines:['Meeting the founders...','Heating the griddle...','Telling the story...','Serving up...'],
+  titles:['GRIP | Our leadership','GRIP | Omani vision','GRIP | Born in Dhofar','GRIP | Get a grip'],
+  intro:function(){
+    if(!window.gsap)return;
+    var tl=gsap.timeline({defaults:{ease:'power4.out'}});
+    tl.fromTo('#art .w>span',{yPercent:120},{yPercent:0,duration:1.1},0)
+      .fromTo('#h1 .w>span',{yPercent:120,rotate:6},{yPercent:0,rotate:0,duration:1.3,stagger:.14},.1)
+      .fromTo('#t0',{scale:0,rotate:-30,opacity:0},{scale:1,rotate:-6,opacity:1,duration:.9,ease:'back.out(2)'},.8)
+      .fromTo('.lc',{y:200,opacity:0,scale:.88},{y:0,opacity:1,scale:1,duration:1.1,stagger:.14,ease:'back.out(1.2)'},.5);
+  },
+  ready:function(){
+    var G=window.GRIP;
+    gsap.set('#art .w>span,#h1 .w>span',{yPercent:120});
+    gsap.set('.lc',{opacity:0});
+    gsap.set('#t0',{opacity:0});
+    G.revealWords(document);
+
+    /* arabic lines: fade/slide as blocks (word splitting breaks Arabic joining) */
+    document.querySelectorAll('.ra,.reveal-ar').forEach(function(el){
+      gsap.from(el,{y:40,opacity:0,duration:1,ease:'power4.out',scrollTrigger:{trigger:el,start:'top 90%'}});
+    });
+
+    /* hero parallax */
+    gsap.to('#h1',{yPercent:-8,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+    gsap.utils.toArray('.lc').forEach(function(c,i){
+      gsap.to(c,{y:(i%2?-1:1)*40,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+    });
+
+    /* stat + value cards */
+    gsap.utils.toArray('.st,.vc').forEach(function(c,i){
+      gsap.from(c,{y:120,rotate:(i%2?4:-4),opacity:0,duration:1,ease:'power4.out',scrollTrigger:{trigger:c,start:'top 92%'}});
+    });
+    gsap.utils.toArray('.st b').forEach(function(b){
+      var raw=b.textContent.trim(),n=parseInt(raw,10);
+      if(isNaN(n)||String(n)!==raw.replace('%',''))return;
+      var suffix=raw.indexOf('%')>-1?'%':'',o={v:0};
+      gsap.to(o,{v:n,duration:1.6,ease:'power2.out',scrollTrigger:{trigger:b,start:'top 92%'},onUpdate:function(){b.textContent=Math.round(o.v)+suffix;}});
+    });
+    addEventListener('load',function(){ScrollTrigger.refresh();});
+  }
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>

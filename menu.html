@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu | GRIP Smashburger · Salalah</title>
+<meta name="description" content="The full GRIP menu: smashburgers, loaded fries, sides, ice cream, milkshakes and drinks. Order online in Salalah.">
+<link rel="icon" href="assets/badge-grip.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Modak&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* hero */
+.hero{position:relative;height:92vh;min-height:620px;overflow:hidden}
+.hero h1{position:absolute;left:0;right:0;top:14vh;text-align:center;font-size:29vw;z-index:1;white-space:nowrap}
+.stk{position:absolute;z-index:6;font-family:"Modak",cursive;font-size:clamp(1.8rem,4vw,4.8rem);line-height:.85;text-align:center;color:var(--ink);paint-order:stroke fill;-webkit-text-stroke:.2em var(--c)}
+.stk.a{left:9vw;top:24vh;rotate:-15deg}
+.stk.b{right:9vw;top:46vh;rotate:15deg}
+.stk .w{display:block}
+.hero-m{position:absolute;z-index:3;left:50%;bottom:-2vh;width:min(46vw,90vh);translate:-50% 0}
+.hero-m img{width:100%}
+.hero-script{position:absolute;z-index:5;left:50%;bottom:3vh;width:min(24vw,44vh);translate:-50% 0;rotate:-4deg}
+.hero p.l,.hero p.r{position:absolute;bottom:4vh;z-index:5;width:min(22vw,320px);font-size:clamp(1.2rem,1.5vw,1.8rem);line-height:1.08}
+.hero p.l{left:2.5vw}.hero p.r{right:2.5vw;text-align:right}
+
+/* category bar */
+.catbar{position:sticky;top:clamp(70px,6.2vw,100px);z-index:700;display:flex;justify-content:center;pointer-events:none;padding:0 2.5vw}
+.catbar .in{pointer-events:auto;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;background:rgba(255,244,234,.94);backdrop-filter:blur(8px);border:3px solid var(--ink);border-radius:999px;padding:7px;max-width:100%;box-shadow:.4vw .5vw 0 rgba(42,18,8,.18)}
+.catbar .in::-webkit-scrollbar{display:none}
+.cat{flex:none;font-size:clamp(1.2rem,1.4vw,1.7rem);letter-spacing:.04em;padding:.45em 1.1em .35em;border-radius:999px;cursor:pointer;background:transparent;border:0;transition:background .3s,color .3s,transform .3s}
+.cat:hover{transform:translateY(-2px)}
+.cat.on{background:var(--o);color:var(--c)}
+
+/* sections */
+.sec{position:relative;padding:7vw 3vw 8vw;overflow:hidden}
+.sec.cream{background:var(--c);color:var(--ink)}
+.sec.orange{background:var(--o);color:var(--c)}
+.sec.orange::before{content:"";position:absolute;inset:0;background:url(assets/waves-cream.png) 0 0/36vw;opacity:.06;pointer-events:none}
+.sec .head{position:relative;text-align:center;margin-bottom:4vw}
+.sec h2{font-size:clamp(5.4rem,15vw,17rem);margin:.5vw auto 0}
+.sec .count{display:block;margin-top:1vw;font-size:clamp(1.3rem,1.7vw,2rem);opacity:.85}
+.grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:2.2vw}
+.pc{position:relative;border-radius:2vw;padding:1vw 1vw 1.4vw;display:flex;flex-direction:column;transition:transform .5s cubic-bezier(.2,.9,.2,1)}
+.cream .pc{background:var(--o);color:var(--c);box-shadow:.5vw .7vw 0 rgba(42,18,8,.18)}
+.orange .pc{background:var(--c);color:var(--ink);box-shadow:.5vw .7vw 0 rgba(42,18,8,.3)}
+.pc:nth-child(4n+1){rotate:-1.5deg}.pc:nth-child(4n+2){rotate:1deg}.pc:nth-child(4n+3){rotate:-1deg}.pc:nth-child(4n+4){rotate:1.5deg}
+.pc:hover{transform:translateY(-1.2vw) rotate(-2.5deg) scale(1.03);z-index:5}
+.pc .ph{position:relative;aspect-ratio:1;border-radius:1.4vw;overflow:hidden;background:#fff}
+.pc .ph img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.9,.2,1)}
+.pc:hover .ph img{transform:scale(1.12) rotate(1.5deg)}
+.price{position:absolute;right:-.6vw;top:-1.4vw;z-index:3;min-width:5.6vw;aspect-ratio:1;padding:0 .5vw;display:grid;place-items:center;text-align:center;border-radius:50%;font-family:"Modak",cursive;font-size:clamp(1.1rem,1.5vw,1.9rem);line-height:.85;rotate:10deg;box-shadow:.25vw .3vw 0 rgba(42,18,8,.25)}
+.price small{display:block;font-family:"Mouse Memoirs";font-size:.55em;letter-spacing:.06em}
+.cream .price{background:var(--c);color:var(--o)}
+.orange .price{background:var(--o);color:var(--c);outline:3px solid var(--c)}
+.newtag{position:absolute;left:-.6vw;top:-1vw;z-index:3;rotate:-10deg;background:var(--ink);color:var(--c);font-family:"Modak",cursive;font-size:clamp(1.1rem,1.4vw,1.8rem);padding:.15em .6em .05em;border-radius:999px}
+.pc h3{margin:1vw .3vw .5vw;font-weight:400;font-size:clamp(2rem,2.6vw,3.2rem);line-height:.9}
+.orange .pc h3{color:var(--o)}
+.chips{display:flex;flex-wrap:wrap;gap:.35vw;margin:0 .3vw}
+.chip{font-size:clamp(1rem,1.05vw,1.3rem);line-height:1;padding:.4em .75em .3em;border-radius:999px;border:2px solid currentColor;opacity:.92}
+.pc p.d{margin:0 .3vw;font-size:clamp(1.05rem,1.15vw,1.4rem);line-height:1.1;opacity:.92}
+
+/* order band */
+.orderband{position:relative;background:var(--o);color:var(--c);text-align:center;overflow:hidden;padding:6vw 4vw 8vw}
+.orderband h2{font-size:clamp(5rem,15vw,17rem);position:relative;z-index:2}
+.orderband p{font-size:clamp(1.5rem,2.2vw,2.6rem);margin:2vw 0;position:relative;z-index:2}
+.orderband .waves{position:absolute;inset:auto 0 0 0;height:50%;background:url(assets/waves-cream.png) 0 100%/420px;opacity:.15}
+.orderband .f1,.orderband .f2{position:absolute;width:clamp(120px,19vw,280px);z-index:1}
+.orderband .f1{left:3%;top:12%;rotate:-12deg}.orderband .f2{right:3%;bottom:8%;rotate:10deg}
+
+@media(max-width:1100px){.grid{grid-template-columns:repeat(3,1fr);gap:3vw}.price{min-width:8vw}.pc{border-radius:3vw}.pc .ph{border-radius:2.2vw}.chip{font-size:1.1rem}.pc h3{font-size:2.4rem}}
+@media(max-width:800px){
+ .hero h1{font-size:44vw;white-space:normal;top:12vh;line-height:.8}
+ .hero-m{width:92vw;bottom:-4vh}
+ .hero-script{width:42vw;bottom:8vh}
+ .hero p.l,.hero p.r{display:none}
+ .stk.a{left:3vw;top:38vh}.stk.b{right:3vw;top:52vh}
+ .grid{grid-template-columns:repeat(2,1fr);gap:5vw 4vw}
+ .pc{border-radius:5vw;padding:2vw 2vw 3vw;box-shadow:1.2vw 1.4vw 0 rgba(42,18,8,.18)!important}
+ .pc .ph{border-radius:3.6vw}
+ .price{min-width:15vw;right:-2vw;top:-3vw;font-size:1.3rem}
+ .newtag{left:-1.5vw;top:-2.5vw}
+ .pc h3{font-size:1.9rem;margin:2vw .6vw 1vw}
+ .chips{gap:5px;margin:0 .6vw}.chip{font-size:.95rem}
+ .pc p.d{font-size:1rem}
+ .sec{padding:14vw 4vw 16vw}
+ .sec h2,.orderband h2{font-size:24vw}
+ .catbar .in{border-width:2px;padding:5px}
+ .orderband .f1,.orderband .f2{opacity:.45}
+}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.price{min-width:22vw;font-size:1.5rem}.pc{padding:3vw 3vw 5vw;border-radius:7vw}.pc .ph{border-radius:5vw}.pc h3{font-size:2.6rem}.chip{font-size:1.15rem}.pc p.d{font-size:1.25rem}.newtag{font-size:1.4rem}}
+</style>
+</head>
+<body class="lock">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-tomato" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="45" fill="#F05024" stroke="#3a1a0c" stroke-width="4"/>
+      <circle cx="50" cy="50" r="35" fill="#ff7a52" stroke="#3a1a0c" stroke-width="3"/>
+      <g fill="#FFD7C2" stroke="#3a1a0c" stroke-width="2.5">
+        <ellipse cx="50" cy="30" rx="8" ry="13"/><ellipse cx="50" cy="70" rx="8" ry="13"/>
+        <ellipse cx="30" cy="40" rx="8" ry="13" transform="rotate(-60 30 40)"/><ellipse cx="70" cy="40" rx="8" ry="13" transform="rotate(60 70 40)"/>
+        <ellipse cx="30" cy="60" rx="8" ry="13" transform="rotate(60 30 60)"/><ellipse cx="70" cy="60" rx="8" ry="13" transform="rotate(-60 70 60)"/>
+      </g>
+      <circle cx="50" cy="50" r="6" fill="#FFF4EA" stroke="#3a1a0c" stroke-width="2.5"/>
+    </symbol>
+    <symbol id="i-cheese" viewBox="0 0 100 100">
+      <path d="M8 34 L94 14 L88 80 L16 90 Z" fill="#FFC247" stroke="#3a1a0c" stroke-width="4" stroke-linejoin="round"/>
+      <path d="M8 34 L94 14" stroke="#fff0b8" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+      <g fill="#E9A21F" stroke="#3a1a0c" stroke-width="2.5"><circle cx="34" cy="52" r="7"/><circle cx="64" cy="40" r="5"/><circle cx="62" cy="68" r="8"/></g>
+    </symbol>
+    <symbol id="i-lettuce" viewBox="0 0 100 100">
+      <path d="M12 58 C0 36 18 14 36 22 C44 4 70 6 76 24 C96 24 100 52 86 62 C92 82 66 94 52 84 C38 98 10 88 16 66 Z" fill="#9BD05F" stroke="#3a1a0c" stroke-width="4" stroke-linejoin="round"/>
+      <g fill="none" stroke="#3a1a0c" stroke-width="2.5" stroke-linecap="round"><path d="M50 84 C48 60 50 40 52 24"/><path d="M50 62 C38 56 30 46 26 36"/><path d="M50 52 C62 48 70 40 74 30"/><path d="M49 72 C60 70 72 66 82 62"/></g>
+    </symbol>
+    <symbol id="i-patty" viewBox="0 0 100 100">
+      <ellipse cx="50" cy="52" rx="47" ry="34" fill="#6b3a1f" stroke="#3a1a0c" stroke-width="4"/>
+      <ellipse cx="50" cy="46" rx="40" ry="26" fill="#86492a"/>
+      <g fill="#3a1a0c" opacity=".75"><circle cx="28" cy="44" r="3"/><circle cx="46" cy="36" r="2.5"/><circle cx="64" cy="48" r="3"/><circle cx="40" cy="58" r="2.5"/><circle cx="72" cy="38" r="2.2"/><circle cx="56" cy="62" r="3"/></g>
+    </symbol>
+  </defs>
+</svg>
+
+<div id="loader">
+  <div class="in"><img src="assets/badge-grip.png" alt=""><p id="ltxt">Opening the menu...</p></div>
+  <div id="bar"></div>
+</div>
+
+<nav class="top" id="nav">
+  <a class="logo" href="index.html" aria-label="GRIP home"><img src="assets/grip-wordmark.webp" alt="GRIP"></a>
+  <div class="pills">
+    <a class="pill solid" href="https://menu.apetitomenu.com/GRIP/en" target="_blank" rel="noopener"><span class="roll"><span>Order</span><span>Order</span></span></a>
+    <button class="pill" id="mbtn" aria-expanded="false" aria-controls="menu"><span class="roll"><span>Menu</span><span>Menu</span></span><span class="burger"><i></i><i></i></span></button>
+  </div>
+</nav>
+
+<div id="menu" aria-hidden="true">
+  <a class="m" href="index.html">Home</a>
+  <a class="m" href="menu.html">Menu</a>
+  <a class="m" href="leadership.html">Leadership</a>
+  <a class="m" href="index.html#find">Find us</a>
+  <a class="m" href="https://menu.apetitomenu.com/GRIP/en" target="_blank" rel="noopener">Order</a>
+  <div class="sm"><span>Wafa Walk · +968 7112 2000</span><span>Salalah Gardens Mall · +968 7222 3377</span></div>
+</div>
+
+<main>
+<section class="hero" id="top" data-intro>
+  <h1 class="big" id="h1" aria-label="The menu"><span class="w"><span>The</span></span> <span class="w"><span>Menu</span></span></h1>
+  <p class="stk a"><span class="w"><span>Smashed</span></span><span class="w"><span>Fresh</span></span></p>
+  <p class="stk b"><span class="w"><span>Bold</span></span><span class="w"><span>Flavor</span></span></p>
+  <div class="hero-m" id="hm"><img src="assets/mascot-flex.png" alt="GRIP chef flexing"></div>
+  <img class="hero-script" id="hs" src="assets/smashburger-script.webp" alt="smashburger">
+  <p class="l">Double smashed patties, crispy chicken, loaded fries and cold shakes.</p>
+  <p class="r">Everything is made to order at our two Salalah shops.</p>
+</section>
+
+<div class="catbar" id="catbar"><div class="in" id="catin"></div></div>
+
+<div id="sections"></div>
+
+<div class="wavebox" id="wfinal" style="background:#F05024"><svg viewBox="0 0 2880 160" preserveAspectRatio="none" height="160"><path fill="#FFF4EA" d="M0 80 C180 20 360 20 540 80 S900 140 1080 80 S1260 20 1440 80 C1620 20 1800 20 1980 80 S2340 140 2520 80 S2700 20 2880 80 V160 H0 Z"/></svg></div>
+<section class="final">
+  <span class="tag" id="t5">Ready?</span>
+  <h2 class="big split">Order your grip</h2>
+  <p class="copy reveal-lines">Pick your favourites and get them hot, straight from the griddle.</p>
+  <a class="pill solid" href="https://menu.apetitomenu.com/GRIP/en" target="_blank" rel="noopener"><span class="roll"><span>Order online</span><span>Order online</span></span></a>
+</section>
+</main>
+
+<footer id="footer">
+  <div class="bar">
+    <nav>
+      <a class="lk" href="index.html"><span class="roll"><span>Home</span><span>Home</span></span></a>
+      <a class="lk" href="menu.html"><span class="roll"><span>Menu</span><span>Menu</span></span></a>
+      <a class="lk" href="leadership.html"><span class="roll"><span>Leadership</span><span>Leadership</span></span></a>
+      <a class="lk" href="index.html#find"><span class="roll"><span>Find us</span><span>Find us</span></span></a>
+      <a class="lk" href="https://menu.apetitomenu.com/GRIP/en" target="_blank" rel="noopener"><span class="roll"><span>Order</span><span>Order</span></span></a>
+    </nav>
+    <span>&copy; 2026 GRIP — All rights reserved</span>
+  </div>
+  <div class="sub"><span>Smashed patties · Salalah</span><span>Wafa Walk +968 7112 2000 · Gardens Mall +968 7222 3377</span></div>
+  <div class="giant" id="giant">
+    <svg class="drop" style="left:10%"><use href="#i-lettuce"/></svg>
+    <svg class="drop" style="left:30%"><use href="#i-tomato"/></svg>
+    <svg class="drop" style="left:52%"><use href="#i-cheese"/></svg>
+    <svg class="drop" style="left:74%"><use href="#i-patty"/></svg>
+    <img class="gw" src="assets/grip-wordmark.webp" alt="GRIP">
+  </div>
+</footer>
+
+<script src="menu-data.js"></script>
+<script>
+/* ---- render menu from data ---- */
+(function(){
+  var data=window.GRIP_MENU,cats=[],map={};
+  data.forEach(function(p){if(!map[p.cat]){map[p.cat]=[];cats.push(p.cat);}map[p.cat].push(p);});
+  var title={'New':'New arrivals','Burgers':'Burgers','Sides':'Sides','Ice Cream':'Ice cream','Milkshakes':'Milkshakes','Soft Drinks':'Soft drinks','Soda':'Soda'};
+  var tagWord={'New':'Just landed','Burgers':'Smashed to order','Sides':'Loaded up','Ice Cream':'Cool down','Milkshakes':'Thick & creamy','Soft Drinks':'Cold drinks','Soda':'From the fountain'};
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+  function slug(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-');}
+  function body(p){
+    if(!p.desc)return '';
+    var d=p.desc.replace(/\.$/,'');
+    if(d.indexOf(',')>-1&&d.split(/\. /).length===1){
+      var parts=d.split(/,\s*/).map(function(x){return x.replace(/^and\s+/i,'').trim();}).filter(Boolean);
+      return '<div class="chips">'+parts.map(function(x){return '<span class="chip">'+esc(x)+'</span>';}).join('')+'</div>';
+    }
+    return '<p class="d">'+esc(p.desc)+'</p>';
+  }
+  var secs=document.getElementById('sections'),bar=document.getElementById('catin'),html='';
+  var WAVE='<div class="wavebox" style="background:BG"><svg viewBox="0 0 2880 160" preserveAspectRatio="none" height="160"><path fill="FILL" d="M0 80 C180 20 360 20 540 80 S900 140 1080 80 S1260 20 1440 80 C1620 20 1800 20 1980 80 S2340 140 2520 80 S2700 20 2880 80 V160 H0 Z"/></svg></div>';
+  var C={cream:'#FFF4EA',orange:'#F05024'};
+  cats.forEach(function(c,i){
+    var tone=i%2===0?'orange':'cream',prev=i===0?'cream':(i%2===0?'cream':'orange');
+    html+=WAVE.replace('BG',C[prev]).replace('FILL',C[tone]);
+    html+='<section class="sec '+tone+'" id="c-'+slug(c)+'" data-cat="'+slug(c)+'"><div class="head">'+
+      '<span class="tag'+(tone==='orange'?' light':'')+'">'+tagWord[c]+'</span>'+
+      '<h2 class="big'+(tone==='orange'?' light':'')+' split">'+title[c]+'</h2>'+
+      '<span class="count">'+map[c].length+' item'+(map[c].length>1?'s':'')+'</span></div><div class="grid">';
+    map[c].forEach(function(p){
+      html+='<article class="pc">'+
+        '<div class="ph">'+(c==='New'?'':'')+'<img src="'+p.img+'" alt="'+esc(p.name)+'" loading="lazy" width="400" height="400"></div>'+
+        (c==='New'?'<span class="newtag">New</span>':'')+
+        '<span class="price"><span>'+parseFloat(p.price).toFixed(3)+'<small>OMR</small></span></span>'+
+        '<h3>'+esc(p.name)+'</h3>'+body(p)+'</article>';
+    });
+    html+='</div></section>';
+    var b=document.createElement('button');b.className='cat'+(i===0?' on':'');b.textContent=title[c];b.dataset.target='c-'+slug(c);bar.appendChild(b);
+  });
+  secs.innerHTML=html;
+  /* final wave colour depends on last section */
+  var last=(cats.length-1)%2===0?'#F05024':'#FFF4EA';
+  var wf=document.getElementById('wfinal');wf.style.background=last;
+  wf.querySelector('path').setAttribute('fill','#FFF4EA');
+  if(last==='#FFF4EA'){wf.style.display='none';}
+})();
+</script>
+<script>
+window.GRIP={
+  loaderLines:['Reading the menu...','Heating the griddle...','Stacking the burgers...','Pouring the shakes...'],
+  titles:['GRIP | Menu','GRIP | Sizzling','GRIP | Smashing','GRIP | Hungry?'],
+  intro:function(){
+    if(!window.gsap)return;
+    var hs=document.querySelectorAll('#h1 .w>span,.stk .w>span');
+    var tl=gsap.timeline({defaults:{ease:'power4.out'}});
+    tl.fromTo('#h1 .w>span',{yPercent:120,rotate:6},{yPercent:0,rotate:0,duration:1.3,stagger:.14},0)
+      .fromTo('#hm',{yPercent:40,opacity:0,scale:.85},{yPercent:0,opacity:1,scale:1,duration:1.4,ease:'back.out(1.3)'},.3)
+      .fromTo('.stk .w>span',{yPercent:120},{yPercent:0,duration:.9,stagger:.08},.9)
+      .fromTo('#hs',{scale:0,opacity:0},{scale:1,opacity:1,duration:.9,ease:'back.out(2)'},1.1)
+      .fromTo('.hero p.l,.hero p.r',{opacity:0,y:30},{opacity:1,y:0,duration:.8,stagger:.1},1.3);
+    gsap.to('#hm img',{y:-14,rotate:1,duration:2.4,yoyo:true,repeat:-1,ease:'sine.inOut'});
+    gsap.to('.stk.a',{y:-14,duration:2.8,yoyo:true,repeat:-1,ease:'sine.inOut'});
+    gsap.to('.stk.b',{y:14,duration:3.1,yoyo:true,repeat:-1,ease:'sine.inOut'});
+  },
+  ready:function(){
+    var G=window.GRIP;
+    gsap.set('#h1 .w>span,.stk .w>span',{yPercent:120});
+    gsap.set('#hm,#hs,.hero p.l,.hero p.r',{opacity:0});
+    G.revealWords(document);
+    gsap.to('#h1',{yPercent:-10,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+    gsap.to('#hm',{y:-70,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+
+    /* product cards rise in */
+    document.querySelectorAll('.grid').forEach(function(g){
+      var cards=g.querySelectorAll('.pc');
+      gsap.set(cards,{y:90,opacity:0,scale:.92});
+      ScrollTrigger.batch(cards,{start:'top 92%',once:true,onEnter:function(b){gsap.to(b,{y:0,opacity:1,scale:1,duration:.9,stagger:.09,ease:'power4.out',overwrite:true});}});
+    });
+    document.querySelectorAll('.price').forEach(function(p){
+      gsap.from(p,{scale:0,rotate:-60,duration:.8,ease:'back.out(2.2)',scrollTrigger:{trigger:p,start:'top 92%',once:true}});
+    });
+
+    /* category bar: scroll-spy + click */
+    var btns=[].slice.call(document.querySelectorAll('.cat')),bar=document.getElementById('catin');
+    function setOn(id){btns.forEach(function(b){var on=b.dataset.target===id;b.classList.toggle('on',on);if(on){var l=b.offsetLeft-bar.clientWidth/2+b.offsetWidth/2;bar.scrollTo({left:l,behavior:'smooth'});}});}
+    document.querySelectorAll('.sec').forEach(function(s){
+      ScrollTrigger.create({trigger:s,start:'top 45%',end:'bottom 45%',onToggle:function(self){if(self.isActive)setOn(s.id);}});
+    });
+    btns.forEach(function(b){b.addEventListener('click',function(){
+      var t=document.getElementById(b.dataset.target);
+      if(window.lenis)lenis.scrollTo(t,{duration:1.4,offset:-110});else t.scrollIntoView({behavior:'smooth'});
+    });});
+    ScrollTrigger.create({trigger:'.hero',start:'bottom 40%',onEnterBack:function(){btns.forEach(function(b,i){b.classList.toggle('on',i===0);});}});
+    addEventListener('load',function(){ScrollTrigger.refresh();});
+  }
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="shared.js"></script>
+</body>
+</html>
