@@ -335,3 +335,28 @@ ul, ol { list-style: none; }
   .story-chef { inset-inline-end: -2%; top: -6%; }
 }
 @media (prefers-reduced-motion: reduce) { .wob { animation: none; } }
+
+/* ============ PAGE TRANSITION WIPE ============ */
+.wipe { position: fixed; inset: 0; z-index: 300; background: var(--orange); display: grid; place-items: center; pointer-events: none; transform: translateY(0); animation: wipe-in 0.75s cubic-bezier(0.7, 0, 0.2, 1) 0.25s forwards; }
+.wipe .logo-mask { width: min(38vw, 190px); color: var(--cream); }
+.wipe.is-out { animation: wipe-out 0.48s cubic-bezier(0.7, 0, 0.2, 1) forwards; pointer-events: all; }
+@keyframes wipe-in { from { transform: translateY(0); } to { transform: translateY(-101%); } }
+@keyframes wipe-out { from { transform: translateY(101%); } to { transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .wipe { display: none; } }
+
+/* ============ HOME: LEADERSHIP TEASER + MENU HEAD CTAs ============ */
+.menu-head-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn-ghost-o { --bg: transparent; --fg: var(--orange); border-color: var(--orange); box-shadow: none; }
+.btn-ghost-o:hover { --bg: var(--orange); --fg: var(--cream); box-shadow: none; }
+.team-teaser { background: var(--orange); color: var(--cream); padding: clamp(70px, 10vw, 140px) 0 clamp(56px, 8vw, 100px); overflow: hidden; position: relative; isolation: isolate; }
+.team-teaser::before { content: ''; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(rgba(255, 243, 234, 0.13) 1.5px, transparent 1.5px), linear-gradient(90deg, rgba(255, 243, 234, 0.13) 1.5px, transparent 1.5px); background-size: 72px 72px; }
+.team-head .h2 { color: var(--cream); margin: 8px 0 0; max-width: 16ch; }
+.team-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(8px, 2vw, 28px); margin-top: clamp(28px, 5vw, 56px); align-items: end; }
+.team-card a { display: grid; gap: 12px; text-decoration: none; }
+.team-photo { display: block; transition: transform 0.5s var(--ease); }
+.team-photo img { width: 100%; height: auto; filter: drop-shadow(0 16px 20px rgba(90, 20, 4, 0.35)); }
+.team-card a:hover .team-photo { transform: translateY(-8px) rotate(-1.5deg); }
+.team-name { font-family: var(--font-display); font-size: clamp(13px, 1.6vw, 22px); text-transform: uppercase; line-height: 1.1; text-align: center; }
+[dir='rtl'] .team-name { text-transform: none; font-weight: 700; }
+.team-cta { margin-top: clamp(24px, 4vw, 44px); text-align: center; }
+@media (max-width: 760px) { .team-row { grid-template-columns: repeat(2, 1fr); row-gap: 28px; } }

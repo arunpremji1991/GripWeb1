@@ -157,6 +157,14 @@ export const MENU = [
   },
 ];
 
+/* ---------- Leadership (source: corporate profile, pages 7-8; no job titles supplied) ---------- */
+export const LEADERS = [
+  { img: 'salim', name: { en: 'Salim Hussain Muqaibal', ar: 'سالم حسين مقيبل' } },
+  { img: 'sahal', name: { en: 'Sahal Ali Al Hafidh', ar: 'سهل علي ال حفيظ' } },
+  { img: 'mohammed', name: { en: 'Mohammed Aqil Al Hafidh', ar: 'محمد عقيل ال حفيظ' } },
+  { img: 'mubarak', name: { en: 'Mubarak Abdulmunem Shamas', ar: 'مبارك عبدالمنعم شماس' } },
+];
+
 /* ---------- Assembly steps (match the official "Old School" burger) ---------- */
 export const STEPS = [
   { layers: ['bunTop'], t: { en: 'Brioche bun', ar: 'خبز البريوش' }, d: { en: 'The soft, golden crown.', ar: 'التاج الذهبي الطري.' } },
@@ -172,6 +180,44 @@ export const STEPS = [
 export const I18N = {
   en: {
     'nav.skip': 'Skip to content',
+    'title.home': 'GRIP Smashburger | Omani Smash Burger in Salalah, Dhofar',
+    'title.menu': 'Menu | GRIP Smashburger',
+    'title.leadership': 'Leadership | GRIP Smashburger',
+    'nav.leadership': 'Leadership',
+    'nav.home': 'Home',
+    'cta.fullMenu': 'See the full menu',
+    'cta.meetTeam': 'Meet the founders',
+    'cta.details': 'Details',
+    'cta.close': 'Close',
+    'lead.teaser.k': 'Our leadership',
+    'lead.teaser.t': 'Four Omani founders. One shared vision.',
+    'page.menu.k': 'The menu',
+    'page.menu.t': 'Every smash. Every side.',
+    'page.menu.sub': 'The full GRIP menu with photos and ingredients. Prices in Omani Rial (OMR).',
+    'page.menu.ing': 'Ingredients',
+    'page.menu.cat.new': 'Just landed',
+    'page.menu.cat.beef': 'Beef smash burgers',
+    'page.menu.cat.chicken': 'Crispy chicken burgers',
+    'page.menu.cat.sides': 'Sides & kids',
+    'page.menu.cat.sweet': 'Shakes & ice cream',
+    'page.menu.cat.drinks': 'Drinks',
+    'page.menu.order': 'Order this online',
+    'page.menu.catNav': 'Menu categories',
+    'page.lead.k': 'Our leadership',
+    'page.lead.t': 'Omani leadership.',
+    'page.lead.t2': 'A shared vision.',
+    'page.lead.p1': 'Behind GRIP are four Omani entrepreneurs united by a shared ambition to build a national brand defined by quality, operational excellence, and long-term sustainability.',
+    'page.lead.p2': 'Their vision is built on practical experience in developing and operating successful hospitality brands in Dhofar, including Lazurd and LIT LIN, providing valuable insight into the local market and evolving customer expectations.',
+    'page.lead.p3': 'GRIP is proudly Omani in its ownership, leadership, and management, with a strong commitment to empowering national talent, investing in quality, and building a sustainable brand that grows from Dhofar and proudly represents Oman.',
+    'page.lead.why': 'What sets GRIP apart',
+    'page.lead.w1': 'A contemporary Omani brand with a distinctive identity.',
+    'page.lead.w2': '100% Omani ownership and leadership.',
+    'page.lead.w3': 'A modern hospitality experience driven by quality and innovation.',
+    'page.lead.w4': 'Exceptional attention to detail and customer experience.',
+    'page.lead.w5': 'A long-term vision focused on sustainable brand building.',
+    'page.lead.w6': 'A meaningful contribution to the local economy and the growing appeal of Dhofar.',
+    'page.lead.cta': 'Taste what they built.',
+
     'nav.story': 'Our Story',
     'nav.smash': 'The Smash',
     'nav.menu': 'Menu',
@@ -230,6 +276,44 @@ export const I18N = {
   },
   ar: {
     'nav.skip': 'تخطَّ إلى المحتوى',
+    'title.home': 'جريب سماش برجر | برجر سماش عُماني في صلالة، ظفار',
+    'title.menu': 'القائمة | جريب سماش برجر',
+    'title.leadership': 'قيادتنا | جريب سماش برجر',
+    'nav.leadership': 'قيادتنا',
+    'nav.home': 'الرئيسية',
+    'cta.fullMenu': 'شاهد القائمة كاملة',
+    'cta.meetTeam': 'تعرف على المؤسسين',
+    'cta.details': 'التفاصيل',
+    'cta.close': 'إغلاق',
+    'lead.teaser.k': 'قيادتنا',
+    'lead.teaser.t': 'أربعة مؤسسين عمانيين. رؤية واحدة.',
+    'page.menu.k': 'القائمة',
+    'page.menu.t': 'كل سماش. كل طبق جانبي.',
+    'page.menu.sub': 'قائمة جريب كاملة مع الصور والمكونات. الأسعار بالريال العُماني.',
+    'page.menu.ing': 'المكونات',
+    'page.menu.cat.new': 'وصل حديثًا',
+    'page.menu.cat.beef': 'برجر سماش اللحم',
+    'page.menu.cat.chicken': 'برجر الدجاج المقرمش',
+    'page.menu.cat.sides': 'أطباق جانبية ووجبة الأطفال',
+    'page.menu.cat.sweet': 'ميلك شيك وآيس كريم',
+    'page.menu.cat.drinks': 'مشروبات',
+    'page.menu.order': 'اطلب هذا الصنف أونلاين',
+    'page.menu.catNav': 'أقسام القائمة',
+    'page.lead.k': 'قيادتنا',
+    'page.lead.t': 'قيادة عُمانية.',
+    'page.lead.t2': 'رؤية طموحة.',
+    'page.lead.p1': 'تقف خلف جريب رؤية أربعة رواد أعمال عمانيين يجمعهم شغف ببناء علامة تجارية وطنية تعكس جودة المنتج، والتميز في التنفيذ، والقدرة على المنافسة.',
+    'page.lead.p2': 'ولا تنطلق هذه الرؤية من فكرة مشروع واحد، بل من خبرة عملية في تطوير وتشغيل علامات تجارية ناجحة في قطاع الأغذية والمشروبات بمحافظة ظفار، من أبرزها لازورد (Lazurd) ولت لن (LIT LIN)، وهو ما عزز من فهم الفريق للسوق المحلي وتطلعات العملاء.',
+    'page.lead.p3': 'وتقوم جريب على ملكية وإدارة عمانية بالكامل، مع التزام بتطوير الكفاءات الوطنية والاستثمار في الجودة، وبناء علامة تجارية مستدامة تنطلق من ظفار وتفخر بهويتها العمانية.',
+    'page.lead.why': 'ما الذي يميز جريب؟',
+    'page.lead.w1': 'علامة تجارية عمانية بهوية معاصرة.',
+    'page.lead.w2': 'قيادة وإدارة عمانية بالكامل.',
+    'page.lead.w3': 'تجربة ضيافة حديثة ترتكز على الجودة والابتكار.',
+    'page.lead.w4': 'اهتمام استثنائي بالتفاصيل وتجربة العميل.',
+    'page.lead.w5': 'رؤية طويلة المدى لبناء علامة تجارية مستدامة.',
+    'page.lead.w6': 'مساهمة في دعم الاقتصاد المحلي وتعزيز جاذبية محافظة ظفار.',
+    'page.lead.cta': 'تذوق ما بنوه.',
+
     'nav.story': 'قصتنا',
     'nav.smash': 'السماش',
     'nav.menu': 'القائمة',
@@ -287,3 +371,7 @@ export const I18N = {
     'a11y.home': 'جريب — الرئيسية',
   },
 };
+
+/* Product photo for a menu item (public/img/menu/<slug>.jpg) */
+export const slug = (name) => name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+export const productImg = (name) => `/img/menu/${slug(name)}.jpg`;
