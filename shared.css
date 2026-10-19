@@ -62,6 +62,8 @@ footer .bar{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;b
 footer .bar nav{display:flex;gap:2vw;flex-wrap:wrap}
 .lk{display:inline-block}
 .lk:hover{color:var(--o)}
+.lk.ig{display:inline-flex;align-items:center;gap:.35em}.lk.ig svg{flex:none}
+
 footer .sub{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:1vw;opacity:.75;font-size:clamp(1.1rem,1.3vw,1.5rem)}
 footer .giant{position:relative;margin-top:9vw}
 footer .giant img.gw{width:96%;margin:0 auto}
